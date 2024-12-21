@@ -1,0 +1,18 @@
+.pageContainer {
+  padding: 2rem;
+}
+
+.foodTitle {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.diseaseList {
+  list-style: none;
+  padding: 0;
+}
+
+.diseaseItem {
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
