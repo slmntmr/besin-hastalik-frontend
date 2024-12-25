@@ -1,0 +1,40 @@
+.raindropsContainer {
+  height: 150px; /* Yüksekliği artırdım, metin için daha fazla alan sağladım */
+  overflow: hidden;
+  position: relative;
+  background-color: #5bf700;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerText {
+  position: relative;
+  z-index: 2; /* Damlaların altında kaybolmaması için z-index artırıldı */
+  text-align: center;
+  color: #fff;
+  margin-bottom: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.headerText h1 {
+  font-size: 20px; /* Başlık boyutunu düzenledim */
+  margin: 0;
+  padding: 0;
+}
+
+.headerText p {
+  font-size: 16px; /* Açıklama boyutunu düzenledim */
+  margin: 5px 0 0 0;
+}
+
+.raindropsCanvas {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  pointer-events: none; /* Tıklama olaylarının damlalardan geçmesini sağlar */
+}

@@ -1,0 +1,10 @@
+.raindrops {
+  position: fixed; /* Sayfanın altına sabitler */
+  bottom: 0; /* Alt kısma yapıştırır */
+  left: 0; /* Yatayda tam başlatır */
+  width: 100%; /* Ekranın tamamını kaplar */
+  height: 50px; /* Dalga yüksekliği */
+  background-color: #86a8c5;
+  overflow: hidden;
+  z-index: 10; /* Diğer öğelerin altında/üstünde durması için gerekli */
+}

@@ -1,14 +1,14 @@
 import '../styles/global.css';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import RaindropsComponent from '@/components/RaindropsComponent';
+import WaveComponent from '@/components/WaveComponent';
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Header />
+        <RaindropsComponent />
         <main>{children}</main>
-        <Footer />
+        <WaveComponent className="raindrops" />
       </body>
     </html>
   );

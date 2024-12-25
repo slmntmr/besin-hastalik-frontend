@@ -14,24 +14,24 @@ export default async function DiseasePage({ params }) {
 
     return (
       <div className="container mt-4">
-        <h1>{matchedDiseaseName} Hastalığına İyi Gelen Besinler</h1>
+        <h1>{matchedDiseaseName} Foods That Help with Diseases</h1>
         {foods.length > 0 ? (
           <FoodList foods={foods} />
         ) : (
-          <p>Bu hastalık için kayıtlı besin bulunamadı.</p>
+          <p>No registered foods found for this disease..</p>
         )}
       </div>
     );
   } catch (error) {
     // Hata mesajını kontrol edin ve uygun şekilde gösterin
     const errorMessage =
-      error.message.includes('Hastalık bulunamadı')
+      error.message.includes('Disease not found')
         ? error.message
-        : 'Bir hata oluştu. Lütfen daha sonra tekrar deneyin.';
+        : 'Disease not found.';
 
     return (
       <div className="container mt-4">
-        <h1>{errorMessage.includes('Hastalık bulunamadı') ? 'Bilgilendirme' : 'Hata'}</h1>
+        <h1>{errorMessage.includes('Disease not found') ? 'Information' : 'Hata'}</h1>
         <p>{errorMessage}</p>
       </div>
     );

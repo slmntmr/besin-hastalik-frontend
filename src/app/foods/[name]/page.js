@@ -18,19 +18,19 @@ export default async function FoodPage({ params }) {
         {diseases.length > 0 ? (
           <DiseaseList diseases={diseases} />
         ) : (
-          <p>Bu besin için kayıtlı hastalık bulunamadı.</p>
+          <p>No registered diseases found for this food.</p>
         )}
       </div>
     );
   } catch (error) {
     const errorMessage =
-      error.message.includes('Besin bulunamadı')
+      error.message.includes('Food not found')
         ? error.message
-        : 'Bir hata oluştu. Lütfen daha sonra tekrar deneyin.';
+        : 'Food not found.';
 
     return (
       <div className="container mt-4">
-        <h1>{errorMessage.includes('Besin bulunamadı') ? 'Bilgilendirme' : 'Hata'}</h1>
+        <h1>{errorMessage.includes('Food not found') ? 'Information' : 'Hata'}</h1>
         <p>{errorMessage}</p>
       </div>
     );

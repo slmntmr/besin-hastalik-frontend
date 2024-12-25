@@ -16,13 +16,13 @@ const DiseaseSearchPage = () => {
 
   return (
     <div className="container mt-4">
-      <h1>Hastalık Arama</h1>
+      <h1>Disease Search</h1>
       <form onSubmit={handleSearch} className="mt-3">
         <div className="input-group">
           <input
             type="text"
             className="form-control"
-            placeholder="Hastalık adı girin..."
+            placeholder="Enter disease name..."
             value={diseaseName}
             onChange={(e) => setDiseaseName(e.target.value)}
           />

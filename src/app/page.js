@@ -24,35 +24,35 @@ export default function HomePage() {
 
   return (
     <div className="container mt-5">
-      <h1 className="text-center">Besin ve Hastalık Ara</h1>
+      <h1 className="text-center">Search for Food and Disease</h1>
       <div className="row mt-4">
         <div className="col-md-6">
-          <h2>Besin Ara</h2>
+          <h2>Search Food</h2>
           <form onSubmit={handleFoodSearch}>
             <input
               type="text"
               className="form-control"
-              placeholder="Besin adı girin..."
+              placeholder="Enter the name of the food..."
               value={foodName}
               onChange={(e) => setFoodName(e.target.value)}
             />
             <button type="submit" className="btn btn-primary mt-2 w-100">
-              Ara
+            Search
             </button>
           </form>
         </div>
         <div className="col-md-6">
-          <h2>Hastalık Ara</h2>
+          <h2>Search Disease</h2>
           <form onSubmit={handleDiseaseSearch}>
             <input
               type="text"
               className="form-control"
-              placeholder="Hastalık adı girin..."
+              placeholder="Enter the name of the disease..."
               value={diseaseName}
               onChange={(e) => setDiseaseName(e.target.value)}
             />
             <button type="submit" className="btn btn-secondary mt-2 w-100">
-              Ara
+            Search
             </button>
           </form>
         </div>

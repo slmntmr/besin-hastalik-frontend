@@ -22,7 +22,7 @@ const FoodSearchPage = () => {
           <input
             type="text"
             className="form-control"
-            placeholder="Besin adı girin..."
+            placeholder="Enter food name..."
             value={foodName}
             onChange={(e) => setFoodName(e.target.value)}
           />
