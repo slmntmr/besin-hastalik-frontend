@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const getRecommendedFoods = async (name) => {
   try {
-    const response = await axios.get(`http://localhost:8080/api/diseases/${name}/recommended-foods`);
+    const response = await axios.get( `${process.env.NEXT_PUBLIC_API_URL}/api/diseases/${name}/recommended-foods`);
     return response.data;
   } catch (error) {
     if (error.response && error.response.status === 404) {

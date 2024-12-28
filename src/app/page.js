@@ -6,19 +6,28 @@ import { useRouter } from 'next/navigation';
 export default function HomePage() {
   const [foodName, setFoodName] = useState('');
   const [diseaseName, setDiseaseName] = useState('');
+  const [loading, setLoading] = useState(false); // Loading state
   const router = useRouter();
 
-  const handleFoodSearch = (e) => {
+  const handleFoodSearch = async (e) => {
     e.preventDefault();
     if (foodName.trim()) {
-      router.push(`/foods/${foodName}`);
+      setLoading(true); // Loading state aktif
+      setTimeout(() => {
+        router.push(`/foods/${foodName}`);
+        setLoading(false); // Arama tamamlanınca yükleme durumu kapatılır
+      }, 1000); // 1 saniyelik simülasyon
     }
   };
 
-  const handleDiseaseSearch = (e) => {
+  const handleDiseaseSearch = async (e) => {
     e.preventDefault();
     if (diseaseName.trim()) {
-      router.push(`/diseases/${diseaseName}`);
+      setLoading(true); // Loading state aktif
+      setTimeout(() => {
+        router.push(`/diseases/${diseaseName}`);
+        setLoading(false); // Arama tamamlanınca yükleme durumu kapatılır
+      }, 1000); // 1 saniyelik simülasyon
     }
   };
 
@@ -35,9 +44,14 @@ export default function HomePage() {
               placeholder="Enter the name of the food..."
               value={foodName}
               onChange={(e) => setFoodName(e.target.value)}
+              disabled={loading} // Arama sırasında input devre dışı
             />
-            <button type="submit" className="btn btn-primary mt-2 w-100">
-            Search
+            <button
+              type="submit"
+              className="btn btn-primary mt-2 w-100"
+              disabled={loading} // Arama sırasında buton devre dışı
+            >
+              {loading ? 'Searching...' : 'Search'}
             </button>
           </form>
         </div>
@@ -50,9 +64,14 @@ export default function HomePage() {
               placeholder="Enter the name of the disease..."
               value={diseaseName}
               onChange={(e) => setDiseaseName(e.target.value)}
+              disabled={loading} // Arama sırasında input devre dışı
             />
-            <button type="submit" className="btn btn-secondary mt-2 w-100">
-            Search
+            <button
+              type="submit"
+              className="btn btn-secondary mt-2 w-100"
+              disabled={loading} // Arama sırasında buton devre dışı
+            >
+              {loading ? 'Searching...' : 'Search'}
             </button>
           </form>
         </div>
