@@ -11,10 +11,11 @@ export default function HomePage() {
 
   const handleFoodSearch = async (e) => {
     e.preventDefault();
-    if (foodName.trim()) {
+    const trimmedFoodName = foodName.trim(); // Boşlukları temizle
+    if (trimmedFoodName) {
       setLoading(true); // Loading state aktif
       setTimeout(() => {
-        router.push(`/foods/${foodName}`);
+        router.push(`/foods/${trimmedFoodName}`);
         setLoading(false); // Arama tamamlanınca yükleme durumu kapatılır
       }, 1000); // 1 saniyelik simülasyon
     }
@@ -22,10 +23,11 @@ export default function HomePage() {
 
   const handleDiseaseSearch = async (e) => {
     e.preventDefault();
-    if (diseaseName.trim()) {
+    const trimmedDiseaseName = diseaseName.trim(); // Boşlukları temizle
+    if (trimmedDiseaseName) {
       setLoading(true); // Loading state aktif
       setTimeout(() => {
-        router.push(`/diseases/${diseaseName}`);
+        router.push(`/diseases/${trimmedDiseaseName}`);
         setLoading(false); // Arama tamamlanınca yükleme durumu kapatılır
       }, 1000); // 1 saniyelik simülasyon
     }
