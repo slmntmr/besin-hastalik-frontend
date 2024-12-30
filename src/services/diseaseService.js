@@ -13,7 +13,7 @@ export const getRecommendedFoods = async (name) => {
     // Koşullu gecikme: Eğer hastalık ismi 'test' ise gecikme uygula
     if (name.toLowerCase() === "test") {
       console.log("'test' parametresi algılandı. 3 saniye bekleniyor...");
-      await delay(3000);
+      await delay(5000);
     }
 
     // API çağrısı

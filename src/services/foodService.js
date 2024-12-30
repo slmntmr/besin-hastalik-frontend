@@ -13,7 +13,7 @@ export const getRelatedDiseases = async (name) => {
     // Koşullu gecikme: Eğer input boş veya sadece boşluklardan oluşuyorsa
     if (!name || name.trim() === "") {
       console.log("Boş input algılandı. 3 saniye bekleniyor...");
-      await delay(3000);
+      await delay(5000);
     }
 
     // API çağrısı
